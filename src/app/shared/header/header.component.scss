@@ -1,17 +1,28 @@
-mat-toolbar{
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+  box-shadow: 1px 0px 10px #00000079;
+  button {
+    border: none;
+    background-color: #ffffff;
+    color: #b1b1b1;
     display: flex;
-    justify-content: space-between;
-    padding: 0 10%;
-    box-shadow: 1px 0px 10px #00000079;
-    button{
-        border: none;
-        background-color: #ffffff;
-        color: #b1b1b1;
-    }
-    
-} 
-.mat-toolbar.mat-primary{
-    background: #ffffff;
-    color: #f85555;
+    align-items: center;
+    justify-content: center;
+  }
 }
-
+.mat-toolbar.mat-primary {
+  background: #ffffff;
+  color: #f85555;
+}
+.icons-container {
+  width: 100px;
+  justify-content: space-around;
+}
+@media screen and (min-width: 800px) {
+  .icons-container {
+    width: 200px;
+    justify-content: space-around;
+  }
+}

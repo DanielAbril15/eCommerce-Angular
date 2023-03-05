@@ -1,1 +1,19 @@
-<p>card-product works!</p>
+<article class="product__container">
+  <figure class="product__img">
+    <img [src]='product.productImgs[0]' [alt]='product.title' />
+  </figure>
+  <div class="product-info">
+    <h3>{{product.title}}</h3>
+    <div class="info__price">
+      <div>
+        <span>Price</span>
+        <p>$ {{product.price}}</p>
+      </div>
+      <button mat-icon-button class="price__cart" aria-label="Example icon-button with share icon">
+        <mat-icon class="material-symbols-outlined">
+          shopping_cart
+        </mat-icon>
+      </button>
+    </div>
+  </div>
+</article>

@@ -12,10 +12,6 @@ export class HomeComponent implements OnInit {
   constructor(private productSvc: ProductsService) {}
 
   ngOnInit() {
-    this.getAllProducts();
-  }
-
-  getAllProducts() {
     this.productSvc.getProducts().subscribe((response) => {
       this.rta = response;
       this.products = this.rta.data.products;

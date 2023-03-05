@@ -9,6 +9,6 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getProducts() {
-    return this.http.get(`${environment.API_URL}products`);
+    return this.http.get<Product[]>(`${environment.API_URL}products`);
   }
 }
