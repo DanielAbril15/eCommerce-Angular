@@ -11,7 +11,10 @@ import { SharedModule } from './shared/shared.module';
 import { ProductComponent } from './pages/product/product.component';
 import { CardProductComponent } from './components/card-product/card-product.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { register } from 'swiper/element/bundle';
+import { SwiperDirective } from './swiper.directive';
 
+register();
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
-    // ProductComponent,
+    ProductComponent,
+    SwiperDirective,
   ],
   providers: [],
   bootstrap: [AppComponent],

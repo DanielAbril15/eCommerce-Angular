@@ -2,23 +2,14 @@
     <ul class="page-position">
       <p>Home</p>
       <li>
-        <p>{product?.title}</p>
+        <p>{{product?.title}}</p>
       </li>
     </ul>
-    <Swiper
-      loop={true}
-      spaceBetween={10}
-      navigation={true}
-      modules={[Navigation, Thumbs]}
-      grabCursor={true}
-      className="product-swiper__container"
-    >
-      {product?.productImgs.map((img, index) => (
-        <SwiperSlide key={index}>
-          <img src={img} alt={product.title} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <swiper-container class="product-swiper__container">
+      <swiper-slide>Slide 1</swiper-slide>
+      <swiper-slide>Slide 2</swiper-slide>
+      <swiper-slide>Slide 3</swiper-slide>
+    </swiper-container>
 
     <article class="product-id-info">
       <h3 class="">{product?.title}</h3>
@@ -43,15 +34,12 @@
       <p class="product-id__description">{product?.description}</p>
     </article>
     <article class="discover">
-      <h4>Discover similar items</h4> -->
-      <!-- <div class="cards-discover__container">
+      <h4>Discover similar items</h4>
+<div class="cards-discover__container">
         {categoryMatch?.map((product) => (
           <Discover key={product.id} product={product} />
         ))}
-      </div> -->
-    <!-- </article>
-  </section> -->
-
-  <!-- <swiper-container>
-
-  </swiper-container>-->
+      </div>
+</article>
+  </section>
+ -->

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/core/interfaces/products';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-card-product',
   templateUrl: './card-product.component.html',
@@ -9,4 +9,6 @@ import { Product } from 'src/app/core/interfaces/products';
 export class CardProductComponent {
   @Input() product!: Product;
   constructor() {}
+
+  clickImg() {}
 }
