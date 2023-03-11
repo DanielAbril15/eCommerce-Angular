@@ -10,13 +10,14 @@ import { SharedModule } from './shared/shared.module';
 
 import { ProductComponent } from './pages/product/product.component';
 import { CardProductComponent } from './components/card-product/card-product.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductComponent,
     CardProductComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +25,7 @@ import { CardProductComponent } from './components/card-product/card-product.com
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
+    // ProductComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
