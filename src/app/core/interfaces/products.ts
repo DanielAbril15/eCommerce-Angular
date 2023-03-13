@@ -8,6 +8,6 @@ export interface Product {
   title: string;
   description: string;
   price: number;
-  productImgs: [] | string;
+  productImgs: [];
   status: string;
 }

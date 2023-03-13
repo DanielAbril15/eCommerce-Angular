@@ -9,7 +9,7 @@ import {
   SwiperOptions,
   Thumbs,
 } from 'swiper';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { Product } from 'src/app/core/interfaces/products';
@@ -23,17 +23,35 @@ import { Product } from 'src/app/core/interfaces/products';
   imports: [CommonModule, SwiperDirective, RouterModule],
 })
 export class ProductComponent {
-  idProduct: number = this.paramsRoute.snapshot.params['id'];
+  idProduct: any = this.paramsRoute.snapshot.params['id'];
   product!: Product;
+  quantity: number = 0;
+  allProducts!: Product[];
   constructor(
-    private router: Router,
     private paramsRoute: ActivatedRoute,
     private pSrv: ProductsService
   ) {}
 
-  ngOnInit(): void {}
-
-  getProduct() {}
+  ngOnInit(): void {
+    this.getProduct();
+  }
+  handlePlus = () => {
+    this.quantity = this.quantity + 1;
+  };
+  handleMinor = () => {
+    if (this.quantity > 1) {
+      this.quantity = this.quantity - 1;
+    } else if (this.quantity === 1) {
+      this.quantity = 0;
+    }
+  };
+  getProduct() {
+    this.pSrv.getProductById(this.idProduct).subscribe((data) => {
+      let response: any = data;
+      this.product = response.data.product;
+      console.log(this.product);
+    });
+  }
 
   public config: SwiperOptions = {
     modules: [Navigation, Pagination, A11y, Mousewheel, Thumbs],

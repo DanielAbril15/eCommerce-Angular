@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./card-product.component.scss'],
 })
 export class CardProductComponent {
-  @Input() product!: Product;
+  @Input() product!: any;
   constructor() {}
 
   clickImg() {}

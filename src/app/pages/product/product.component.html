@@ -1,45 +1,44 @@
-<!-- <section class="product-id">
-    <ul class="page-position">
-      <p>Home</p>
-      <li>
-        <p>{{product?.title}}</p>
-      </li>
-    </ul>
-    <swiper-container class="product-swiper__container">
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-    </swiper-container>
+<section class="product-id">
+  <ul class="page-position">
+    <p>Home</p>
+    <li>
+      <p>{{product.title}}</p>
+    </li>
+  </ul>
+  <swiper-container loop="true" pagination="true" centered-slides='true' class="product-swiper__container ">
+    <swiper-slide *ngFor="let img of product.productImgs">
+      <img [src]="img" alt="product img" class="img-product">
+    </swiper-slide>
+  </swiper-container>
 
-    <article class="product-id-info">
-      <h3 class="">{product?.title}</h3>
-      <div class="info-tobuy">
-        <div class="id-info__price">
-          <span>Price</span>
-          <p>$ {product?.price}</p>
-        </div>
-        <div class="id-info__quantity">
-          <span>Quantity</span>
-          <div class="quantity__buttons">
-            <button onClick={handleMinor}>-</button>
-            <span>{quantity}</span>
-            <button onClick={handlePlus}>+</button>
-          </div>
+  <article class="product-id-info">
+    <h3 class="">{{product.title}}</h3>
+    <div class="info-tobuy">
+      <div class="id-info__price">
+        <span>Price</span>
+        <p>$ {{product.price}}</p>
+      </div>
+      <div class="id-info__quantity">
+        <span>Quantity</span>
+        <div class="quantity__buttons">
+          <button (click)="handleMinor()">-</button>
+          <span>{{quantity}}</span>
+          <button (click)="handlePlus()">+</button>
         </div>
       </div>
-      <button onClick={handleAddCart} class="btn-id-cart">
-        Add to cart
-        <i class="fa-solid fa-cart-shopping"></i>
-      </button>
-      <p class="product-id__description">{product?.description}</p>
-    </article>
-    <article class="discover">
-      <h4>Discover similar items</h4>
-<div class="cards-discover__container">
+    </div>
+    <button class="btn-id-cart">
+      Add to cart
+      <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+    <p class="product-id__description">{{product.description}}</p>
+  </article>
+  <article class="discover">
+    <h4>Discover similar items</h4>
+    <!-- <div class="cards-discover__container">
         {categoryMatch?.map((product) => (
           <Discover key={product.id} product={product} />
         ))}
-      </div>
-</article>
-  </section>
- -->
+      </div> -->
+  </article>
+</section>
