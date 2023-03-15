@@ -13,6 +13,7 @@ import { CardProductComponent } from './components/card-product/card-product.com
 import { ProfileComponent } from './pages/profile/profile.component';
 import { register } from 'swiper/element/bundle';
 import { SwiperDirective } from './swiper.directive';
+import { RouterModule } from '@angular/router';
 
 register();
 @NgModule({
@@ -30,6 +31,7 @@ register();
     SharedModule,
     ProductComponent,
     SwiperDirective,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

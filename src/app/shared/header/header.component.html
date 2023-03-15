@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <span>e-commerce</span>
+  <span class="logo" routerLink="/home">e-commerce</span>
 
   <div class="d-flex align-items-center icons-container">
     <button mat-icon-button class="nav-bar favorite-icon" aria-label="icon-button with heart icon">
@@ -7,11 +7,25 @@
         account_circle
       </mat-icon>
     </button>
-    <button mat-icon-button class="nav-bar" aria-label="icon-button with share icon">
-      <mat-icon class="material-symbols-outlined">
-        shopping_cart
-      </mat-icon>
-    </button>
+    <div class="cart-icon">
+
+      <button mat-icon-button class="nav-bar " (click)="openCloseCart()" aria-label="icon-button with share icon">
+        <mat-icon class="material-symbols-outlined">
+          shopping_cart
+        </mat-icon>
+      </button>
+    </div>
+
   </div>
 
 </mat-toolbar>
+<section class="cart-products" [class.cart-display]="cart" (click)="listenEvent($event)">
+
+  <div class="products-container-cart">
+
+    <p class="cart ">
+      hola
+    </p>
+  </div>
+
+</section>

@@ -8,7 +8,8 @@ import { Component, HostListener } from '@angular/core';
 export class HeaderComponent {
   screenWidth = window.innerWidth;
   movil = false;
-
+  cart = false;
+  details: any;
   constructor() {
     this.screenWidth < 800 ? (this.movil = true) : (this.movil = false);
   }
@@ -17,5 +18,15 @@ export class HeaderComponent {
   onResize() {
     this.screenWidth = window.innerWidth;
     this.screenWidth < 800 ? (this.movil = true) : (this.movil = false);
+  }
+
+  listenEvent(event: Event) {
+    const element = event.target as HTMLHtmlElement;
+    if (!element.className.endsWith('cart')) {
+      this.cart = false;
+    }
+  }
+  openCloseCart() {
+    this.cart = !this.cart;
   }
 }
