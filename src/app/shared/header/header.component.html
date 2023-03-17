@@ -22,10 +22,25 @@
 <section class="cart-products" [class.cart-display]="cart" (click)="listenEvent($event)">
 
   <div class="products-container-cart">
+<!-- 
+    <article class="product-cart__container cart">
+      <div class="product-cart__description cart">
+        <div class="product-cart__titles cart">
+          <span class="cart">{product.brand}</span>
+          <p class="cart">{product.title}</p>
+        </div>
 
-    <p class="cart ">
-      hola
-    </p>
+        <mat-icon class="material-symbols-outlined">
+delete
+</mat-icon>
+      </div>
+      <p class="product-cart__quantity cart">
+        {product.productsInCart.quantity}
+      </p>
+      <p class="product-cart__price cart">
+        <span>Total</span> ${product.price * product.productsInCart.quantity}
+      </p>
+    </article> -->
   </div>
 
 </section>
