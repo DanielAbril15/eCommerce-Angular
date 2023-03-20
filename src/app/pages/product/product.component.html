@@ -35,10 +35,34 @@
   </article>
   <article class="discover">
     <h4>Discover similar items</h4>
-    <!-- <div class="cards-discover__container">
-        {categoryMatch?.map((product) => (
-          <Discover key={product.id} product={product} />
-        ))}
-      </div> -->
+    <div class="similar-container">
+
+      <ng-container *ngFor="let similarProduct of allProducts"
+        [class.no-display]="product.category!==similarProduct.category.name && product.title===similarProduct.title">
+        <article class="product__container"
+          *ngIf="product.category===similarProduct.category.name && product.title!==similarProduct.title">
+          <figure class="product__img">
+            <a [routerLink]="['../',similarProduct.id]" (click)="refresh()">
+              <img [src]='similarProduct.productImgs[0]' [alt]='similarProduct.title' />
+            </a>
+          </figure>
+          <div class="product-info">
+            <h3>{{similarProduct.title}}</h3>
+            <div class="info__price">
+              <div>
+                <span>Price</span>
+                <p>$ {{similarProduct.price}}</p>
+              </div>
+              <button mat-icon-button class="price__cart" aria-label="Example icon-button with share icon">
+                <mat-icon class="material-symbols-outlined">
+                  +
+                </mat-icon>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </ng-container>
+    </div>
   </article>
 </section>

@@ -14,16 +14,13 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { register } from 'swiper/element/bundle';
 import { SwiperDirective } from './swiper.directive';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from './shared/material/material.module';
 
 register();
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    CardProductComponent,
-    ProfileComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, ProfileComponent],
   imports: [
+    CardProductComponent,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -32,6 +29,7 @@ register();
     ProductComponent,
     SwiperDirective,
     RouterModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

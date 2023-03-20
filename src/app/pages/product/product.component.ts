@@ -24,9 +24,10 @@ import { Product } from 'src/app/core/interfaces/products';
 })
 export class ProductComponent {
   idProduct: any = this.paramsRoute.snapshot.params['id'];
-  product!: Product;
+  product!: any;
   quantity: number = 0;
-  allProducts!: Product[];
+  allProducts!: any[];
+
   constructor(
     private paramsRoute: ActivatedRoute,
     private pSrv: ProductsService
@@ -34,7 +35,9 @@ export class ProductComponent {
 
   ngOnInit(): void {
     this.getProduct();
+    this.getAllProducts();
   }
+
   handlePlus = () => {
     this.quantity = this.quantity + 1;
   };
@@ -49,8 +52,20 @@ export class ProductComponent {
     this.pSrv.getProductById(this.idProduct).subscribe((data) => {
       let response: any = data;
       this.product = response.data.product;
-      console.log(this.product);
+      console.log(this.product.category);
     });
+  }
+
+  getAllProducts() {
+    this.pSrv.getProducts().subscribe((data) => {
+      let response: any = data;
+      this.allProducts = response.data.products;
+    });
+  }
+  refresh(): void {
+    setTimeout(() => {
+      window.location.reload();
+    }, 300);
   }
 
   public config: SwiperOptions = {
