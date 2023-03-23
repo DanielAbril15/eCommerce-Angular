@@ -137,8 +137,9 @@ h4 {
 }
 .similar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 30px;
 }
 .product__container {
   width: 300px;

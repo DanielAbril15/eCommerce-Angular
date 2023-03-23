@@ -1,1 +1,30 @@
-<p>profile works!</p>
+<section class="login">
+  <div class="login__container">
+    <p class="login-welcome">
+      Welcome! Enter yout email and password to continue
+    </p>
+    <div class="login__test-user">
+      <h3>Test User</h3>
+      <p>
+        <i class="fa-solid fa-envelope"></i> danielabril01@gmail.com
+      </p>
+      <p>
+        <i class="fa-solid fa-lock"></i> pass1234
+      </p>
+    </div>
+    <form>
+
+      <mat-form-field class="login__option">
+        <label class="label">Email</label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field class="login__option">
+        <label class="label">Password</label>
+        <input matInput formControlName="password" type="password">
+      </mat-form-field>
+
+      <button (click)="login()">LOGIN</button>
+    </form>
+  </div>
+</section>
