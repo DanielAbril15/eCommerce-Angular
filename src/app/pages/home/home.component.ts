@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
     this.productSvc.getProducts().subscribe((response) => {
       this.rta = response;
       this.products = this.rta.data.products;
-      console.log(this.products);
     });
   }
 }

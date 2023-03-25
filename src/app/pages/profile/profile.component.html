@@ -1,4 +1,4 @@
-<section class="login">
+<section class="login" *ngIf="!localUser">
   <div class="login__container">
     <p class="login-welcome">
       Welcome! Enter yout email and password to continue
@@ -12,19 +12,34 @@
         <i class="fa-solid fa-lock"></i> pass1234
       </p>
     </div>
-    <form>
+
+    <form [formGroup]="formLogin">
 
       <mat-form-field class="login__option">
-        <label class="label">Email</label>
-        <input matInput formControlName="email">
+        <mat-label class="label">Email</mat-label>
+        <input matInput formControlName="email" placeholder=" ">
       </mat-form-field>
 
       <mat-form-field class="login__option">
-        <label class="label">Password</label>
-        <input matInput formControlName="password" type="password">
+        <mat-label class="label">Password</mat-label>
+        <input matInput formControlName="password" type="password" placeholder=" ">
       </mat-form-field>
 
-      <button (click)="login()">LOGIN</button>
+      <button (click)="login()" (click)="refresh()">LOGIN</button>
     </form>
   </div>
+</section>
+
+<section class="user-profile" *ngIf="localUser!==null">
+  <article class="profile__container">
+    <div class="profile-picture">
+      <i class="fa-regular fa-user"></i>
+    </div>
+    <p>
+      {{ localUser.firstName }} {{ localUser.lastName }}
+
+    </p>
+
+    <button (click)="handleLogout()">Log Out</button>
+  </article>
 </section>

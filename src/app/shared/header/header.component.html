@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <span class="logo" routerLink="/home">e-commerce</span>
 
-  <div class="d-flex align-items-center icons-container">
+  <div class="d-flex align-items-center icons-container" [routerLink]="routes.profile">
     <button mat-icon-button class="nav-bar favorite-icon" aria-label="icon-button with heart icon">
       <mat-icon class="material-symbols-outlined">
         account_circle
@@ -22,7 +22,7 @@
 <section class="cart-products" [class.cart-display]="cart" (click)="listenEvent($event)">
 
   <div class="products-container-cart">
-<!-- 
+    <!--
     <article class="product-cart__container cart">
       <div class="product-cart__description cart">
         <div class="product-cart__titles cart">

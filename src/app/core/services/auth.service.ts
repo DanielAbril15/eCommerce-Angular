@@ -9,9 +9,10 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  login(data: {}) {
+  login(email: string, password: string) {
     return this.http.post(`${environment.API_URL}users/login`, {
-      data,
+      email,
+      password,
     });
   }
   saveToken(token: string) {
@@ -20,5 +21,9 @@ export class AuthService {
   getToken() {
     const token = localStorage.getItem('token');
     return token;
+  }
+  getUser() {
+    const user = localStorage.getItem('user');
+    return user;
   }
 }

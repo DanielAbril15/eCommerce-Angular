@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { AppRoutes } from 'src/app/app-routes';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  routes = AppRoutes;
   screenWidth = window.innerWidth;
   movil = false;
   cart = false;
