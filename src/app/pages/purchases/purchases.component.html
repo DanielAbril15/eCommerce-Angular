@@ -1,0 +1,34 @@
+<section class="purchases" *ngIf="token!==null ">
+  <ul class="page-position">
+    <p class="page-position__purchases">Home</p>
+    <li>
+      <p>Purchases</p>
+    </li>
+  </ul>
+  <div class="cards-container">
+
+    <div class="purchase__container" *ngFor="let product of products">
+      <span class="purchase__id">{{product.id}}</span>
+      <p class="purchase__date">
+        <span>Date:</span> {{product.createdAt}}
+      </p>
+      <div class="purchase__info">
+        <p class="purchase__status">
+          <span>Status:</span>
+          {{product.cart.status}}
+        </p>
+        <div class="purchase__product" *ngFor="let card of product.cart.products">
+
+          <div class="purchase__product-quantity">
+            <p>{{card.title}}</p>
+            <span>{{card.productsInCart.quantity}}</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section *ngIf="token==null " class="token-null">
+  <h1>INICIA SESION PARA ACCEDER A ESTA INFORMACION</h1>
+</section>

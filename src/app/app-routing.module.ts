@@ -4,11 +4,13 @@ import { AppRoutes } from './app-routes';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { PurchasesComponent } from './pages/purchases/purchases.component';
 
 const routes: Routes = [
   { path: AppRoutes.home, component: HomeComponent },
   { path: AppRoutes.product, component: ProductComponent },
   { path: AppRoutes.profile, component: ProfileComponent },
+  { path: AppRoutes.purchases, component: PurchasesComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

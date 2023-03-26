@@ -1,10 +1,17 @@
 <mat-toolbar color="primary">
   <span class="logo" routerLink="/home">e-commerce</span>
 
-  <div class="d-flex align-items-center icons-container" [routerLink]="routes.profile">
-    <button mat-icon-button class="nav-bar favorite-icon" aria-label="icon-button with heart icon">
+  <div class="d-flex align-items-center icons-container">
+    <button mat-icon-button class="nav-bar favorite-icon" [routerLink]="routes.profile"
+      aria-label="icon-button with heart icon">
       <mat-icon class="material-symbols-outlined">
         account_circle
+      </mat-icon>
+    </button>
+    <button mat-icon-button class="nav-bar favorite-icon" [routerLink]="routes.purchases"
+      aria-label="icon-button with heart icon">
+      <mat-icon class="material-symbols-outlined">
+        all_inbox
       </mat-icon>
     </button>
     <div class="cart-icon">

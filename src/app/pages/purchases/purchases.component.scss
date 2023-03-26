@@ -1,0 +1,85 @@
+.purchases {
+  background-color: #e1e0e0;
+  display: grid;
+  padding: 10%;
+  justify-content: center;
+  gap: 20px;
+}
+.page-position {
+  display: flex;
+  gap: 20px;
+}
+.page-position__purchases {
+  color: #f73737;
+}
+.cards-container {
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.purchase__container {
+  max-width: 400px;
+  min-width: 350px;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 5px #888888;
+}
+.purchase__container:hover {
+  scale: 1.05;
+}
+.purchase__id {
+  position: absolute;
+  color: #f73737;
+  font-size: 15px;
+  font-weight: bold;
+}
+.purchase__date {
+  align-self: flex-end;
+  width: 70%;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.purchase__date span {
+  color: #888888;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.purchase__info .purchase__status {
+  margin-top: 20px;
+  color: #04c104;
+  margin-left: 6px;
+}
+.purchase__status span {
+  color: #888888;
+  font-weight: bold;
+}
+
+.purchase__product-quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+.purchase__product-quantity span {
+  color: #888888;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 1px solid #e1e0e0;
+  width: 30px;
+  text-align: center;
+}
+.token-null {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}

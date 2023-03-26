@@ -17,9 +17,10 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from './shared/material/material.module';
 import { InterceptorInterceptor } from './core/interceptors/interceptor.interceptor';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PurchasesComponent } from './pages/purchases/purchases.component';
 register();
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProfileComponent],
+  declarations: [AppComponent, HomeComponent, ProfileComponent, PurchasesComponent],
   imports: [
     CardProductComponent,
     BrowserModule,

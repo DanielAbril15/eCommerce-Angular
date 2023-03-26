@@ -1,5 +1,6 @@
 export enum AppRoutes {
   home = 'home',
   product = 'product/:id',
-  profile = 'profile'
+  profile = 'profile',
+  purchases = 'purchases',
 }
