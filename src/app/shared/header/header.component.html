@@ -29,25 +29,39 @@
 <section class="cart-products" [class.cart-display]="cart" (click)="listenEvent($event)">
 
   <div class="products-container-cart">
-    <!--
-    <article class="product-cart__container cart">
-      <div class="product-cart__description cart">
-        <div class="product-cart__titles cart">
-          <span class="cart">{product.brand}</span>
-          <p class="cart">{product.title}</p>
-        </div>
+    <section class="products-container">
+      <h3 class="cart">Cart</h3>
+      <div class="cart cart-products__container">
+        <article class="product-cart__container cart" *ngFor="let product of productsCart">
+          <div class="product-cart__description cart">
+            <div class="product-cart__titles cart">
+              <span class="cart">{{product.brand}}</span>
+              <p class="cart">{{product.title}}</p>
+            </div>
 
-        <mat-icon class="material-symbols-outlined">
-delete
-</mat-icon>
+            <mat-icon class="material-symbols-outlined">
+              delete
+            </mat-icon>
+          </div>
+          <p class="product-cart__quantity cart">
+            {{product.productsInCart.quantity}}
+          </p>
+          <p class="product-cart__price cart">
+            <span>Total</span> ${{product.price * product.productsInCart.quantity}}
+          </p>
+        </article>
       </div>
-      <p class="product-cart__quantity cart">
-        {product.productsInCart.quantity}
-      </p>
-      <p class="product-cart__price cart">
-        <span>Total</span> ${product.price * product.productsInCart.quantity}
-      </p>
-    </article> -->
+
+
+    </section>
+    <div class="cart__total cart">
+      <div class="cart">
+        <span class="cart">Total</span>
+        <p class="cart total-price">${{totalPrice}}</p>
+      </div>
+      <button onClick={handleCheckout}>Checkout</button>
+    </div>
   </div>
+
 
 </section>

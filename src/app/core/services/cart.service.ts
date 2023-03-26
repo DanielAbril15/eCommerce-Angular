@@ -7,6 +7,7 @@ import { environment } from '../../../environments/environment';
 })
 export class CartService {
   constructor(private http: HttpClient) {}
+
   getCartProduct() {
     return this.http.get(`${environment.API_URL}cart`);
   }
